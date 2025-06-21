@@ -1,0 +1,22 @@
+# For Node Selector & Node affinty
+This is based on node labels
+
+To add labels to a node, use the kubectl label command. 
+For example, to add a label disktype=ssd to a node, use the following command:
+
+kubectl label nodes <node-name> accelerator: nvidia-gpu
+
+
+
+# For Taints and Tolerations
+
+To tolerate a taint, you can specify toleration in the pod specification. For example, the following pod specification tolerates the taint "disktype=ssd" with a toleration period of 3600 seconds:
+
+kubectl taint nodes <node-name> special=true:NoSchedule
+
+# Pod Affinity
+
+This is based on pod labels
+
+
+

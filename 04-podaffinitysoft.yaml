@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podAffinitySoft
+  labels:
+    app: my-app
+spec:
+  affinity:
+    podAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - my-app
+            topologyKey: "kubernetes.io/hostname"
+  containers:
+    - name: my-container
+      image: nginx
