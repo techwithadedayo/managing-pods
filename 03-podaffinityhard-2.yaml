@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-c-hard
+  name: pod-d-hard
   labels:
     app: my-app
 spec:
@@ -17,4 +17,4 @@ spec:
           topologyKey: "kubernetes.io/hostname"
   containers:
     - name: my-container
-      image: nginx
+      image: ubuntu

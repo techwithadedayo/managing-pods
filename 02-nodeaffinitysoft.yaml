@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nodeAffinitySoft
+  name: pod-c-soft
 spec:
   affinity:
     nodeAffinity:
